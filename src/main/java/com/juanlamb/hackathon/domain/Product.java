@@ -17,6 +17,7 @@ public class Product {
 
     private String name;
     private double price;
+    private String paymentUrl;
     private String description;
     private int expirationInMonths;
 }

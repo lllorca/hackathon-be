@@ -1,6 +1,7 @@
 package com.juanlamb.hackathon.security;
 
 import com.juanlamb.hackathon.domain.User;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -11,6 +12,7 @@ import java.util.Collections;
 @RequiredArgsConstructor
 public class JwtUserDetails implements UserDetails {
 
+    @Getter
     private final User user;
 
     @Override
