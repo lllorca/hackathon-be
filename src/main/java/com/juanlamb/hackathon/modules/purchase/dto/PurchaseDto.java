@@ -1,6 +1,5 @@
-package com.juanlamb.hackathon.modules.purchase;
+package com.juanlamb.hackathon.modules.purchase.dto;
 
-import com.juanlamb.hackathon.modules.business.dto.BusinessDto;
 import com.juanlamb.hackathon.modules.user.dto.UserDto;
 import lombok.Data;
 
@@ -12,7 +11,7 @@ public class PurchaseDto {
 
     private UUID id;
     private UserDto buyer;
-    private BusinessDto business;
+    //TODO: put productDto
     private int quantity;
     private double unitPrice;
     private LocalDateTime timestamp;

@@ -1,4 +1,4 @@
-package com.juanlamb.hackathon.modules.purchase;
+package com.juanlamb.hackathon.modules.purchase.dto;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

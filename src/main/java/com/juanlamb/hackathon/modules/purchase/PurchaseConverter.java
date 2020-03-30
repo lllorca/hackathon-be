@@ -1,6 +1,7 @@
 package com.juanlamb.hackathon.modules.purchase;
 
 import com.juanlamb.hackathon.domain.Purchase;
+import com.juanlamb.hackathon.modules.purchase.dto.PurchaseDto;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
