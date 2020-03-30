@@ -41,6 +41,9 @@ public class PurchaseService {
 
     public Purchase createPurchase(Long productId, int quantity) {
         Product product = productRepository.findById(productId).orElseThrow(NotFoundException::new);
+        if(product.getBusiness().getOwner().equals(authorizationService.getLoggedInUser())) {
+            throw new IllegalArgumentException("Product owner cannot be the buyer");
+        }
         Purchase purchase = new Purchase();
         LocalDateTime currentTime = LocalDateTime.now();
 
