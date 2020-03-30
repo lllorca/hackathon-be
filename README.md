@@ -1,2 +1,2 @@
-# hackathon-be
+# Hackathon BackEnd
 Backend of hackathon project
