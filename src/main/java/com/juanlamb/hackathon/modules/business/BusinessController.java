@@ -4,6 +4,8 @@ import com.juanlamb.hackathon.domain.Business;
 import com.juanlamb.hackathon.domain.BusinessCategory;
 import com.juanlamb.hackathon.modules.business.dto.BusinessDto;
 import com.juanlamb.hackathon.modules.business.dto.CreateBusinessDto;
+import com.juanlamb.hackathon.modules.product.ProductConverter;
+import com.juanlamb.hackathon.modules.product.dto.ProductDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,10 +19,19 @@ public class BusinessController {
 
     private final BusinessService businessService;
     private final BusinessConverter businessConverter;
+    private final ProductConverter productConverter;
 
     @GetMapping("/{id}")
     public BusinessDto getById(@PathVariable("id") Long id) {
         return businessConverter.convert(businessService.getById(id));
+    }
+
+    @GetMapping("/{id}/product")
+    public List<ProductDto> getProducts(@PathVariable("id") Long id) {
+        return businessService.getBusinessProducts(id)
+                              .stream()
+                              .map(productConverter::convert)
+                              .collect(Collectors.toList());
     }
 
     @GetMapping("/category/{category}")
