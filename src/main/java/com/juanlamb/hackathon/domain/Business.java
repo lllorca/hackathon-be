@@ -13,6 +13,7 @@ public class Business {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @Column(unique = true)
     private String name;
     private BusinessCategory category;
 
@@ -20,6 +21,6 @@ public class Business {
     private User owner;
     @Embedded
     private Address address;
-    @OneToMany(mappedBy = "business", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "business", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Product> products;
 }

@@ -19,7 +19,4 @@ public class User {
     @Column(unique = true)
     private String email;
     private String password;
-
-    @OneToOne(mappedBy = "owner")
-    private Business business;
 }

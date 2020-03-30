@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class AuthorizationService {
 
-    public User getAuthentication() {
+    public User getLoggedInUser() {
         return ((JwtUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUser();
     }
 }
