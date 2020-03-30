@@ -1,4 +1,4 @@
-package com.juanlamb.hackathon.client;
+package com.juanlamb.hackathon.domain;
 
 import lombok.Data;
 
@@ -8,8 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Data
-@Entity
-public class Client {
+@Entity(name = "users")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
