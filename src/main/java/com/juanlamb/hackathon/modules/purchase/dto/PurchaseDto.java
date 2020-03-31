@@ -16,4 +16,6 @@ public class PurchaseDto {
     private int quantity;
     private double unitPrice;
     private LocalDateTime timestamp;
+    private LocalDateTime expiration;
+
 }
