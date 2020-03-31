@@ -21,6 +21,14 @@ public class BusinessController {
     private final BusinessConverter businessConverter;
     private final ProductConverter productConverter;
 
+    @GetMapping
+    public List<BusinessDto> getAll() {
+        return businessService.findAll()
+                              .stream()
+                              .map(businessConverter::convert)
+                              .collect(Collectors.toList());
+    }
+
     @GetMapping("/{id}")
     public BusinessDto getById(@PathVariable("id") Long id) {
         return businessConverter.convert(businessService.getById(id));

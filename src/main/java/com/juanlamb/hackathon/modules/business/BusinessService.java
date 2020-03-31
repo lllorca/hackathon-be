@@ -29,6 +29,10 @@ public class BusinessService {
         return businessRepository.save(business);
     }
 
+    public List<Business> findAll() {
+        return businessRepository.findAll();
+    }
+
     public List<Business> findByCategory(BusinessCategory category) {
         return businessRepository.findByCategory(category);
     }
