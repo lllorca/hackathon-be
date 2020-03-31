@@ -18,7 +18,7 @@ public class PurchaseController {
     private final PurchaseService purchaseService;
     private final PurchaseConverter purchaseConverter;
 
-
+    @CrossOrigin
     @GetMapping("/my-purchases")
     public List<PurchaseDto> myPurchases() {
         return purchaseService.myPurchases()
@@ -27,6 +27,7 @@ public class PurchaseController {
                               .collect(Collectors.toList());
     }
 
+    @CrossOrigin
     @GetMapping("/my-sales")
     public List<PurchaseDto> mySales() {
         return purchaseService.mySales()
