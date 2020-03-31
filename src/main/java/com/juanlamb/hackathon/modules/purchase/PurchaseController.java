@@ -19,7 +19,7 @@ public class PurchaseController {
     private final PurchaseConverter purchaseConverter;
 
     @CrossOrigin
-    @GetMapping("/my-purchases")
+    @GetMapping("/mypurchases")
     public List<PurchaseDto> myPurchases() {
         return purchaseService.myPurchases()
                               .stream()
@@ -28,7 +28,7 @@ public class PurchaseController {
     }
 
     @CrossOrigin
-    @GetMapping("/my-sales")
+    @GetMapping("/mysales")
     public List<PurchaseDto> mySales() {
         return purchaseService.mySales()
                               .stream()
