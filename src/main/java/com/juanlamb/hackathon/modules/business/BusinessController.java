@@ -50,6 +50,11 @@ public class BusinessController {
                               .collect(Collectors.toList());
     }
 
+    @GetMapping("/my-business")
+    public BusinessDto getByOwner() {
+        return businessConverter.convert(businessService.getLoggedInBusiness());
+    }
+
     @PostMapping
     public BusinessDto create(@RequestBody CreateBusinessDto createBusinessDto) {
         Business businessToCreate = businessConverter.convert(createBusinessDto);

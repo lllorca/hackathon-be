@@ -18,6 +18,7 @@ public class BusinessConverter {
     }
 
     public BusinessDto convert(Business business) {
+        if (business == null) return null;
         return modelMapper.map(business, BusinessDto.class);
     }
 }

@@ -44,4 +44,8 @@ public class BusinessService {
     public Business getById(Long id) {
         return businessRepository.findById(id).orElseThrow(NotFoundException::new);
     }
+
+    public Business getLoggedInBusiness() {
+        return businessRepository.findByOwner(authorizationService.getLoggedInUser()).orElse(null);
+    }
 }
